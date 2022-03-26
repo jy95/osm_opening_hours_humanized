@@ -1,4 +1,4 @@
-__version__ = "1.0.0b4"
+__version__ = "1.0.0b5"
 __appname__ = "osm_osm_opening_hours_humanized"
 __author__ = "rezemika <reze.mika@gmail.com>"
 __licence__ = "AGPLv3"
