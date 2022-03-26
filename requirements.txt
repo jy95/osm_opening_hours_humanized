@@ -1,4 +1,4 @@
-astral==1.7.1
-Babel==2.9.0
-pytz==2020.5
-lark-parser==0.11.1
+astral==1.10.1
+Babel==2.9.1
+pytz==2022.1
+lark-parser==0.12.0
