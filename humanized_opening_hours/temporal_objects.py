@@ -7,10 +7,10 @@ from operator import itemgetter
 import babel
 import babel.dates
 
-from humanized_opening_hours.rendering import (
+from osm_opening_hours_humanized.rendering import (
     set_locale, join_list, render_timespan, render_time, translate_open_closed
 )
-from humanized_opening_hours.exceptions import SolarHoursError
+from osm_opening_hours_humanized.exceptions import SolarHoursError
 
 
 gettext.install("hoh", "locales")

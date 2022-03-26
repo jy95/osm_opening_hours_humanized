@@ -3,7 +3,7 @@ import re
 from lark.lark import Tree
 from lark.lexer import Token
 
-from humanized_opening_hours.temporal_objects import WEEKDAYS
+from osm_opening_hours_humanized.temporal_objects import WEEKDAYS
 
 # flake8: noqa
 

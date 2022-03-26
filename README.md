@@ -6,7 +6,7 @@ Humanized Opening Hours - A parser for the opening_hours fields from OSM
 **Due to a lack of free time, the developpement of this module is paused. You can of course use it, but its features won't evolve before a (long) moment. If you want to become maintainer, don't hesitate to create an issue!**
 
 ```python
->>> import humanized_opening_hours as hoh
+>>> import osm_opening_hours_humanized as hoh
 >>> field = "Mo-Fr 06:00-21:00; Sa,Su 08:00-12:00"
 >>> oh = hoh.OHParser(field, locale="en")
 >>> oh.is_open()
@@ -59,7 +59,7 @@ It can also take a `locale` argument, which can be any valid locale name. You ca
 However, to be able to use the most of the rendering methods, it must be in `hoh.AVAILABLE_LOCALES` (a warning will be printed otherwise).
 
 ```python
->>> import humanized_opening_hours as hoh
+>>> import osm_opening_hours_humanized as hoh
 >>> field = "Mo-Fr 06:00-21:00; Sa,Su 07:00-21:00"
 >>> oh = hoh.OHParser(field)
 ```
@@ -146,7 +146,7 @@ You might be interested in the [OH Sanitizer](https://github.com/rezemika/oh_san
 
 -----
 
-If you try to parse a field which is invalid or contains a pattern which is not supported, an `humanized_opening_hours.exceptions.ParseError` (inheriting from `humanized_opening_hours.exceptions.HOHError`) will be raised.
+If you try to parse a field which is invalid or contains a pattern which is not supported, an `osm_opening_hours_humanized.exceptions.ParseError` (inheriting from `osm_opening_hours_humanized.exceptions.HOHError`) will be raised.
 
 If a field contains only a comment (like `"on appointment"`), a `CommentOnlyField` exception (inheriting from `ParseError`) will be raised.
 It contains a `comment` attribute, allowing you to display it instead of the opening hours.
@@ -158,7 +158,7 @@ You can check equality between two `OHParser` instances.
 It will be true if both have the same field and the same location.
 
 ```python
->>> import humanized_opening_hours as hoh
+>>> import osm_opening_hours_humanized as hoh
 >>> 
 >>> oh1 = hoh.OHParser("Mo 10:00-20:00")
 >>> oh2 = hoh.OHParser("Mo 10:00-20:00")
@@ -204,11 +204,11 @@ oh.solar_hours[datetime.date.today()] = solar_hours
 
 Attention, except if the facility is on the equator, this setting will be valid only for a short period (except if you provide coordinates, because they will be automatically updated).
 
-If you try to do something with a field containing solar hours without providing a location, a `humanized_opening_hours.exceptions.SolarHoursError` exception will be raised.
+If you try to do something with a field containing solar hours without providing a location, a `osm_opening_hours_humanized.exceptions.SolarHoursError` exception will be raised.
 
 In some very rare cases, it might be impossible to get solar hours.
 For example, in Antactica, the sun may never reach the dawn / dusk location in the sky, so the `astral` module can't return the down time.
-So, if you try to get, for example, the next change with a field containing solar hours and located in such location, a `humanized_opening_hours.exceptions.SolarHoursError` exception will also be raised.
+So, if you try to get, for example, the next change with a field containing solar hours and located in such location, a `osm_opening_hours_humanized.exceptions.SolarHoursError` exception will also be raised.
 
 -----
 

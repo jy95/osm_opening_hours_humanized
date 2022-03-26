@@ -10,14 +10,14 @@ import lark
 import babel.dates
 import astral
 
-from humanized_opening_hours.temporal_objects import (
+from osm_opening_hours_humanized.temporal_objects import (
     WEEKDAYS, MONTHS, Day
 )
-from humanized_opening_hours.field_parser import get_tree_and_rules
-from humanized_opening_hours.rendering import (
+from osm_opening_hours_humanized.field_parser import get_tree_and_rules
+from osm_opening_hours_humanized.rendering import (
     AVAILABLE_LOCALES, translate_colon
 )
-from humanized_opening_hours.exceptions import (
+from osm_opening_hours_humanized.exceptions import (
     ParseError, CommentOnlyField, AlwaysClosed, NextChangeRecursionError
 )
 
@@ -288,14 +288,14 @@ class OHParser:
         
         Raises
         ------
-        humanized_opening_hours.exceptions.ParseError
+        osm_opening_hours_humanized.exceptions.ParseError
             When something goes wrong during the parsing
             (e.g. the field is invalid or contains an unsupported pattern).
-        humanized_opening_hours.exceptions.CommentOnlyField
+        osm_opening_hours_humanized.exceptions.CommentOnlyField
             When the field contains only a comment.
             The comment is accessible via the 'comment' attribute.
             Inherits from 'ParseError'.
-        humanized_opening_hours.exceptions.AlwaysClosed
+        osm_opening_hours_humanized.exceptions.AlwaysClosed
             When the field indicates only "closed" or "off".
             Inherits from 'ParseError'.
         """
@@ -489,7 +489,7 @@ class OHParser:
         
         Raises
         ------
-        humanized_opening_hours.exceptions.NextChangeRecursionError
+        osm_opening_hours_humanized.exceptions.NextChangeRecursionError
             When reaching the maximum recursion level.
         """
         def _current_or_next_timespan(dt, i=0):
@@ -654,7 +654,7 @@ class OHParser:
         
         Returns
         -------
-        humanized_opening_hours.Rule or None
+        osm_opening_hours_humanized.Rule or None
             The rule matching the given datetime, if available.
         """
         if dt is None:
@@ -761,7 +761,7 @@ class OHParser:
         Day
             An object representing the requested day, containing useful
             attributes and methods for rendering. See docstring of
-            'humanized_opening_hours.temporal_objects.Day'.
+            'osm_opening_hours_humanized.temporal_objects.Day'.
         """
         if not dt:
             dt = datetime.date.today()

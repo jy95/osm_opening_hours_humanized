@@ -8,7 +8,7 @@ to get a human-readable describing of the opening hours.
 Automatically sanitizes the fields to prevent some common mistakes.
 
 To get started, simply do:
->>> import humanized_opening_hours as hoh
+>>> import osm_opening_hours_humanized as hoh
 >>> oh = hoh.OHParser("Mo-Sa 10:00-19:00")
 """
 # flake8: noqa
@@ -21,8 +21,8 @@ _gettext.install("HOH",
     )
 )
 
-from humanized_opening_hours.version import __version__, __appname__, __author__, __licence__
-from humanized_opening_hours.main import OHParser, sanitize, days_of_week
-from humanized_opening_hours.temporal_objects import easter_date
-from humanized_opening_hours.rendering import AVAILABLE_LOCALES
-from humanized_opening_hours import exceptions
+from osm_opening_hours_humanized.version import __version__, __appname__, __author__, __licence__
+from osm_opening_hours_humanized.main import OHParser, sanitize, days_of_week
+from osm_opening_hours_humanized.temporal_objects import easter_date
+from osm_opening_hours_humanized.rendering import AVAILABLE_LOCALES
+from osm_opening_hours_humanized import exceptions

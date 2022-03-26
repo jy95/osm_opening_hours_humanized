@@ -6,13 +6,13 @@ from lark import Tree
 from lark.lexer import Token
 import astral
 
-from humanized_opening_hours import field_parser
-from humanized_opening_hours.main import (
+from osm_opening_hours_humanized import field_parser
+from osm_opening_hours_humanized.main import (
     OHParser, sanitize, days_of_week, DayPeriods
 )
-from humanized_opening_hours.frequent_fields import parse_simple_field
-from humanized_opening_hours.temporal_objects import easter_date
-from humanized_opening_hours.exceptions import (
+from osm_opening_hours_humanized.frequent_fields import parse_simple_field
+from osm_opening_hours_humanized.temporal_objects import easter_date
+from osm_opening_hours_humanized.exceptions import (
     HOHError,
     ParseError,
     SolarHoursError,

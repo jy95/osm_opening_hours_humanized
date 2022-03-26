@@ -3,7 +3,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 exec(open(os.path.join(
-    BASE_DIR, 'humanized_opening_hours', 'version.py')).read())
+    BASE_DIR, 'osm_opening_hours_humanized', 'version.py')).read())
 
 setup(
     name="osm_opening_hours_humanized",
@@ -16,7 +16,7 @@ setup(
     long_description_content_type='text/markdown',
     install_requires=["lark-parser", "babel", "astral"],
     include_package_data=True,
-    url='https://github.com/jy95/humanized_opening_hours',
+    url='https://github.com/jy95/osm_opening_hours_humanized',
     keywords="openstreetmap opening_hours parser",
     classifiers=[
         "Programming Language :: Python",

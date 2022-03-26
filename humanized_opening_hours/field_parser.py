@@ -3,7 +3,7 @@ import os
 
 import lark
 
-from humanized_opening_hours.temporal_objects import (
+from osm_opening_hours_humanized.temporal_objects import (
     WEEKDAYS, MONTHS,
     Rule, RangeSelector, AlwaysOpenSelector,
     MonthDaySelector, WeekdayHolidaySelector,
@@ -11,8 +11,8 @@ from humanized_opening_hours.temporal_objects import (
     YearSelector, MonthDayRange, MonthDayDate,
     TimeSpan, Time, TIMESPAN_ALL_THE_DAY
 )
-from humanized_opening_hours.exceptions import ParseError
-from humanized_opening_hours.frequent_fields import (
+from osm_opening_hours_humanized.exceptions import ParseError
+from osm_opening_hours_humanized.frequent_fields import (
     FREQUENT_FIELDS, parse_simple_field
 )
 
