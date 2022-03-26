@@ -1,0 +1,26 @@
+name: "Publish package to PyPi"
+on:
+  push:
+    branches:
+      - master
+  repository_dispatch:
+    types: [generate-package]
+  workflow_dispatch:
+jobs:
+  generate_package:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v2
+      - name: 🔨 Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - name: 🚧 Install dependencies
+        run: pip3 install -r requirements.txt
+      - name: 🤖 Build & Publish
+        uses: casperdcl/deploy-pypi@v2
+        if: ${{ github.ref == 'refs/heads/master' }}
+        with:
+          password: ${{ secrets.PYPI_TOKEN }}
+          pip: wheel -w dist/ --no-deps .
