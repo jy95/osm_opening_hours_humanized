@@ -9,6 +9,7 @@ import contextlib
 import lark
 import babel.dates
 import astral
+from astral import location as importedLocation
 
 from osm_opening_hours_humanized.temporal_objects import (
     WEEKDAYS, MONTHS, Day
@@ -174,9 +175,9 @@ class SolarHours(dict):
         
         Parameters
         ----------
-        location : astral.Location or tuple, optional
+        location : astral.location.Location or tuple, optional
             Allows you to provide a location, allowing an automatic
-            getting of solar hours. Must be an 'astral.Location' object
+            getting of solar hours. Must be an 'astral.location.Location' object
             or a tuple like '(latitude, longitude, timezone_name, elevation)'.
             None default, meaning it relies only on manual settings.
             Although this is mostly intended for manual testing, you can
@@ -185,17 +186,17 @@ class SolarHours(dict):
         
         Attributes
         ----------
-        location : astral.Location or None
+        location : astral.location.Location or None
             The location for which to get solar hours.
         
         To manually set solar hours for the present day, do the following:
         
         >>> solar_hours[datetime.date.today()] = {...}
         """
-        if isinstance(location, astral.Location):
+        if isinstance(location, importedLocation.Location):
             self.location = location
         elif isinstance(location, tuple):
-            self.location = astral.Location(
+            self.location = importedLocation.Location(
                 ["Location", "Region", *location]
             )
         elif isinstance(location, str):
@@ -243,9 +244,9 @@ class OHParser:
             The opening_hours field.
         locale : str, optional
             The locale to use. "en" default.
-        location : astral.Location or tuple, optional
+        location : astral.location.Location or tuple, optional
             Allows you to provide a location, allowing an automatic
-            getting of solar hours. Must be an 'astral.Location' object
+            getting of solar hours. Must be an 'astral.location.Location' object
             or a tuple like '(latitude, longitude, timezone_name, elevation)'.
         optimize : bool, optional
             If True (default), the parsing will be skipped if the field is
@@ -429,7 +430,7 @@ class OHParser:
         
         Parameters
         ----------
-        location : astral.Location
+        location : astral.location.Location
             The location to use.
         
         Example

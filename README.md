@@ -189,8 +189,8 @@ The first is to give to the `OHParser` the location of the facility, to allow it
 The second is to use the `SolarHours` object (which inherits from `dict`), *via* the `OHParser.solar_hours` attribute.
 
 ```python
-# First method. You can use either an 'astral.Location' object or a tuple.
-location = astral.Location(["Greenwich", "England", 51.168, 0.0, "Europe/London", 24])
+# First method. You can use either an 'astral.location.Location' object or a tuple.
+location = astral.location.Location(["Greenwich", "England", 51.168, 0.0, "Europe/London", 24])
 location = (51.168, 0.0, "Europe/London", 24)
 oh = hoh.OHParser(field, location=location)
 

@@ -5,6 +5,7 @@ import copy
 from lark import Tree
 from lark.lexer import Token
 import astral
+from astral import location
 
 from osm_opening_hours_humanized import field_parser
 from osm_opening_hours_humanized.main import (
@@ -1014,7 +1015,7 @@ class TestSolarHours(unittest.TestCase):
     def test_location_1(self):
         oh = OHParser(
             "Mo-Fr sunrise-sunset",
-            location=astral.Location((
+            location=location.Location((
                 "Greenwich",
                 "England",
                 51.168, 0.0,
@@ -1040,7 +1041,7 @@ class TestSolarHours(unittest.TestCase):
     def test_location_2(self):
         oh = OHParser(
             "Mo-Fr (sunrise-01:00)-(sunset+02:15)",
-            location=astral.Location((
+            location=location.Location((
                 "Greenwich",
                 "England",
                 51.168, 0.0,
