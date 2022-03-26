@@ -6,7 +6,7 @@ exec(open(os.path.join(
     BASE_DIR, 'humanized_opening_hours', 'version.py')).read())
 
 setup(
-    name="osm_humanized_opening_hours",
+    name="osm_opening_hours_humanized",
     version=__version__,  # noqa
     packages=find_packages(exclude=["doc", "tests"]),
     author="rezemika",
@@ -15,7 +15,7 @@ setup(
     long_description=open(BASE_DIR + "/README.md", 'r').read(),
     install_requires=["lark-parser", "babel", "astral"],
     include_package_data=True,
-    url='http://github.com/rezemika/humanized_opening_hours',
+    url='https://github.com/jy95/humanized_opening_hours',
     keywords="openstreetmap opening_hours parser",
     classifiers=[
         "Programming Language :: Python",
