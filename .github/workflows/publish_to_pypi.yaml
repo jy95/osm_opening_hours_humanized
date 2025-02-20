@@ -1,8 +1,5 @@
 name: "Publish package to PyPi"
 on:
-  push:
-    branches:
-      - master
   repository_dispatch:
     types: [generate-package]
   workflow_dispatch:
