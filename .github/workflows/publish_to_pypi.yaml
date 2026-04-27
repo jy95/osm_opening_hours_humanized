@@ -16,7 +16,7 @@ jobs:
       - name: 🚧 Install dependencies
         run: pip3 install -r requirements.txt
       - name: 🤖 Build & Publish
-        uses: casperdcl/deploy-pypi@v2
+        uses: casperdcl/deploy-pypi@v3
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
           password: ${{ secrets.PYPI_TOKEN }}
