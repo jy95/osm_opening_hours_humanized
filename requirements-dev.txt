@@ -4,5 +4,5 @@ pytz==2026.3.post1
 lark-parser==0.12.0
 flake8==7.3.0
 pyflakes==3.4.0
-twine==6.2.0
+twine==7.0.0
 requests==2.34.2
